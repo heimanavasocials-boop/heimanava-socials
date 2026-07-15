@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -53,7 +54,11 @@ export default function OfferDetail({ offerKey }: { offerKey: keyof typeof OFFER
               {offer.galleryItems.map((item) => (
                 <Link key={item.href} href={item.href} className={styles.galleryProjectCard}>
                   <div className={styles.galleryProjectThumb}>
-                    <ImagePlaceholderIcon size={28} />
+                    {item.image ? (
+                      <Image src={item.image} alt={item.titre} fill sizes="200px" style={{ objectFit: "cover" }} />
+                    ) : (
+                      <ImagePlaceholderIcon size={28} />
+                    )}
                   </div>
                   <div className={styles.galleryProjectTitle}>{item.titre}</div>
                 </Link>

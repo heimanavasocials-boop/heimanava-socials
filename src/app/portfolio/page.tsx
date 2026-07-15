@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -37,7 +38,17 @@ export default function PortfolioPage() {
         {sortedItems.map((item) => (
           <Link key={item.id} href={item.href} className={styles.card}>
             <div className={styles.imgWrap}>
-              <ImagePlaceholderIcon size={32} />
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt={item.titre}
+                  fill
+                  sizes="(max-width: 560px) 90vw, (max-width: 900px) 45vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              ) : (
+                <ImagePlaceholderIcon size={32} />
+              )}
               <div className={styles.overlay}>
                 <div className={styles.overlayTitle}>{item.titre}</div>
                 <div className={styles.overlayDate}>{formatPortfolioDate(item.date)}</div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./PortfolioCarousel.module.css";
 import { PORTFOLIO_ITEMS, formatPortfolioDate } from "@/lib/site-data";
@@ -60,7 +61,17 @@ export default function PortfolioCarousel() {
           {sortedItems.map((item) => (
             <Link key={item.id} href={item.href} className={styles.card}>
               <div className={styles.imgWrap}>
-                <ImagePlaceholderIcon size={32} />
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.titre}
+                    fill
+                    sizes="260px"
+                    style={{ objectFit: "cover" }}
+                  />
+                ) : (
+                  <ImagePlaceholderIcon size={32} />
+                )}
               </div>
               <div className={styles.overlay}>
                 <div className={styles.overlayTitle}>{item.titre}</div>
