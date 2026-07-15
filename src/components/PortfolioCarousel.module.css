@@ -1,0 +1,170 @@
+.section {
+  padding: clamp(64px, 9vw, 110px) clamp(24px, 5vw, 72px);
+  background: var(--color-bordeaux-dark);
+}
+
+.heading {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  margin: 0;
+  color: var(--color-cream);
+}
+
+.carouselOuter {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: none;
+  width: 260px;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  display: block;
+}
+
+.imgWrap {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  background: linear-gradient(155deg, var(--color-card) 0%, var(--color-bordeaux) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(243, 229, 200, 0.35);
+}
+
+.card:hover .imgWrap {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  background: linear-gradient(180deg, transparent 45%, rgba(72, 20, 15, 0.92) 100%);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  pointer-events: none;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlayTitle {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-cream);
+  margin-bottom: 4px;
+}
+
+.overlayDate {
+  font-size: 12px;
+  color: rgba(243, 229, 200, 0.7);
+}
+
+.arrow {
+  position: absolute;
+  top: calc(50% - 18px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(72, 20, 15, 0.85);
+  border: 1px solid rgba(243, 229, 200, 0.25);
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.arrow:hover {
+  background: var(--color-terracotta);
+}
+
+.arrowPrev {
+  left: -18px;
+}
+
+.arrowNext {
+  right: -18px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.testimonyCta {
+  display: inline-block;
+  border: 1px solid rgba(243, 229, 200, 0.35);
+  color: var(--color-cream);
+  padding: 13px 26px;
+  border-radius: 100px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.viewAll {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-terracotta);
+}
+
+@media (max-width: 640px) {
+  .arrow {
+    display: none;
+  }
+}

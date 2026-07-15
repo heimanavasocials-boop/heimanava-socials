@@ -1,0 +1,113 @@
+.header {
+  padding: clamp(48px, 7vw, 84px) clamp(24px, 5vw, 72px) 0;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+  margin: 0 0 20px;
+  color: var(--color-cream);
+}
+
+.subtitle {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: rgba(243, 229, 200, 0.82);
+  margin: 0;
+}
+
+.breadcrumbWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 980px;
+  margin: clamp(48px, 7vw, 72px) auto 0;
+  padding: 0 clamp(24px, 5vw, 72px);
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid rgba(243, 229, 200, 0.08);
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--color-card-hover);
+}
+
+.icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(243, 229, 200, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-terracotta);
+}
+
+.cardTitle {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--color-cream);
+}
+
+.cardTagline {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-top: -10px;
+}
+
+.cardDescription {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(243, 229, 200, 0.78);
+  margin: 0;
+  flex: 1;
+}
+
+.cardPrice {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-cream);
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

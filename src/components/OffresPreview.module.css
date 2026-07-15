@@ -1,0 +1,104 @@
+.section {
+  padding: clamp(48px, 7vw, 90px) clamp(24px, 5vw, 72px) clamp(64px, 8vw, 96px);
+  background: var(--color-bordeaux-dark);
+}
+
+.heading {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  margin: 0;
+  color: var(--color-cream);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: 18px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid rgba(243, 229, 200, 0.08);
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--color-card-hover);
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(243, 229, 200, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-terracotta);
+}
+
+.cardTitle {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-cream);
+}
+
+.cardDescription {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(243, 229, 200, 0.72);
+  margin: 0;
+  flex: 1;
+}
+
+.cardPrice {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-cream);
+}
+
+.footerLink {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.viewAll {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-terracotta);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

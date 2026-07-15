@@ -1,0 +1,31 @@
+.section {
+  padding: clamp(48px, 7vw, 84px) clamp(24px, 5vw, 72px) clamp(80px, 10vw, 120px);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.breadcrumbWrap {
+  display: flex;
+}
+
+.title {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 20px;
+  color: var(--color-cream);
+}
+
+.paragraph {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(243, 229, 200, 0.78);
+  margin: 0 0 16px;
+}
+
+.contactLink {
+  color: var(--color-terracotta);
+  font-weight: 600;
+}
