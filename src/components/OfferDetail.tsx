@@ -48,12 +48,25 @@ export default function OfferDetail({ offerKey }: { offerKey: keyof typeof OFFER
           <div className={styles.galleryHeading}>
             {offer.gallery === "photo" ? "Galerie photo" : "Galerie vidéo"}
           </div>
-          <div className={styles.galleryEmpty}>
-            <ImagePlaceholderIcon size={32} />
-            <p className={styles.galleryEmptyText}>
-              Mes premières réalisations arrivent bientôt dans cette galerie.
-            </p>
-          </div>
+          {offer.galleryItems && offer.galleryItems.length > 0 ? (
+            <div className={styles.galleryProjects}>
+              {offer.galleryItems.map((item) => (
+                <Link key={item.href} href={item.href} className={styles.galleryProjectCard}>
+                  <div className={styles.galleryProjectThumb}>
+                    <ImagePlaceholderIcon size={28} />
+                  </div>
+                  <div className={styles.galleryProjectTitle}>{item.titre}</div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.galleryEmpty}>
+              <ImagePlaceholderIcon size={32} />
+              <p className={styles.galleryEmptyText}>
+                Mes premières réalisations arrivent bientôt dans cette galerie.
+              </p>
+            </div>
+          )}
         </div>
       )}
 

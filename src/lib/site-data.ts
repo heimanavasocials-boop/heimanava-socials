@@ -56,6 +56,7 @@ export type OfferDetail = {
   bullets: string[];
   pricingNote: string;
   gallery?: "photo" | "video";
+  galleryItems?: { titre: string; href: string }[];
 };
 
 export const OFFER_DETAILS: Record<string, OfferDetail> = {
@@ -86,6 +87,9 @@ export const OFFER_DETAILS: Record<string, OfferDetail> = {
     ],
     pricingNote: "Sur devis, selon la durée et le lieu de l'événement.",
     gallery: "photo",
+    galleryItems: [
+      { titre: "Banque d'images - IAE Polynésie", href: "/portfolio/banque-images-iae-polynesie" },
+    ],
   },
   stories: {
     key: "stories",
@@ -124,11 +128,29 @@ export type PortfolioItem = {
 };
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
+  {
+    id: "home-portfolio-iae",
+    titre: "Banque d'images - IAE Polynésie",
+    date: "2026-07-10",
+    href: "/portfolio/banque-images-iae-polynesie",
+  },
   { id: "home-portfolio-1", titre: "Refonte présentation Canva", date: "2026-06-28", href: "/offres/studio" },
   { id: "home-portfolio-2", titre: "Captation événementielle", date: "2026-06-10", href: "/offres/focus" },
-  { id: "home-portfolio-3", titre: "Campagne visuelle A&CO Immobilier", date: "2026-05-20", href: "/offres/pro" },
-  { id: "home-portfolio-4", titre: "Vidéo courte Star Orthopédie", date: "2026-04-02", href: "/offres/stories" },
 ];
+
+export type PortfolioGallery = {
+  slug: string;
+  titre: string;
+  images: string[];
+};
+
+export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
+  "banque-images-iae-polynesie": {
+    slug: "banque-images-iae-polynesie",
+    titre: "Banque d'images - IAE Polynésie",
+    images: [],
+  },
+};
 
 const MONTH_NAMES = [
   "janv.",

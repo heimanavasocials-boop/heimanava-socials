@@ -141,6 +141,43 @@
   max-width: 380px;
 }
 
+.galleryProjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.galleryProjectCard {
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(243, 229, 200, 0.08);
+  transition: transform 0.18s ease;
+}
+
+.galleryProjectCard:hover {
+  transform: translateY(-4px);
+}
+
+.galleryProjectThumb {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(155deg, var(--color-card) 0%, var(--color-bordeaux) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(243, 229, 200, 0.35);
+}
+
+.galleryProjectTitle {
+  padding: 14px 16px;
+  background: var(--color-card);
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-cream);
+}
+
 @media (max-width: 760px) {
   .content {
     grid-template-columns: 1fr;
