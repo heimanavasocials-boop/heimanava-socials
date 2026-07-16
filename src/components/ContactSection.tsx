@@ -4,12 +4,39 @@ import { useState } from "react";
 import styles from "./ContactSection.module.css";
 import { MailIcon, PhoneIcon, InstagramIcon, TikTokIcon } from "./icons";
 
-export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "sending" | "success" | "error";
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+export default function ContactSection() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nom: data.get("nom"),
+          email: data.get("email"),
+          entreprise: data.get("entreprise"),
+          secteur: data.get("secteur"),
+          service: data.get("service"),
+          message: data.get("message"),
+        }),
+      });
+
+      if (!res.ok) throw new Error("Échec de l'envoi");
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -29,11 +56,11 @@ export default function ContactSection() {
               </span>
               heimanava.socials@gmail.com
             </a>
-            <a href="tel:+68959282" className={styles.contactItem}>
+            <a href="tel:+68989592826" className={styles.contactItem}>
               <span className={styles.contactIcon}>
                 <PhoneIcon />
               </span>
-              +689 59 28 26
+              +689 89 59 28 26
             </a>
             <a href="https://instagram.com/heimanava_socials" className={styles.contactItem}>
               <span className={styles.contactIcon}>
@@ -58,8 +85,22 @@ export default function ContactSection() {
             </label>
             <input
               id="contact-nom"
+              name="nom"
               type="text"
               placeholder="Votre nom"
+              required
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="contact-email">
+              Email
+            </label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              placeholder="votre@email.com"
               required
               className={styles.input}
             />
@@ -70,6 +111,7 @@ export default function ContactSection() {
             </label>
             <input
               id="contact-entreprise"
+              name="entreprise"
               type="text"
               placeholder="Nom de votre PME"
               className={styles.input}
@@ -81,6 +123,7 @@ export default function ContactSection() {
             </label>
             <input
               id="contact-secteur"
+              name="secteur"
               type="text"
               placeholder="Restauration, artisanat, immobilier…"
               className={styles.input}
@@ -90,7 +133,7 @@ export default function ContactSection() {
             <label className={styles.label} htmlFor="contact-service">
               Service qui vous intéresse
             </label>
-            <select id="contact-service" className={styles.select} defaultValue="pro">
+            <select id="contact-service" name="service" className={styles.select} defaultValue="pro">
               <option value="pro">Heimanava Pro : Community management</option>
               <option value="focus">Heimanava Focus : Photographie événementielle</option>
               <option value="stories">Heimanava Stories : Vidéo courte format social</option>
@@ -104,16 +147,23 @@ export default function ContactSection() {
             </label>
             <textarea
               id="contact-message"
+              name="message"
               placeholder="Parlez-moi un peu de votre PME et de ce dont vous avez besoin…"
               rows={4}
               className={styles.textarea}
             />
           </div>
-          <button type="submit" className={styles.submit}>
-            Envoyer
+          <button type="submit" className={styles.submit} disabled={status === "sending"}>
+            {status === "sending" ? "Envoi en cours…" : "Envoyer"}
           </button>
-          {submitted && (
+          {status === "success" && (
             <div className={styles.confirmation}>Merci ! Cassie vous répond très vite ✦</div>
+          )}
+          {status === "error" && (
+            <div className={styles.error}>
+              Un problème est survenu. Réessayez ou écrivez directement à
+              heimanava.socials@gmail.com.
+            </div>
           )}
         </form>
       </div>

@@ -45,8 +45,8 @@ export default function Footer() {
             <a href="mailto:heimanava.socials@gmail.com" className={styles.link}>
               heimanava.socials@gmail.com
             </a>
-            <a href="tel:+68959282" className={styles.link}>
-              +689 59 28 26
+            <a href="tel:+68989592826" className={styles.link}>
+              +689 89 59 28 26
             </a>
           </div>
         </div>

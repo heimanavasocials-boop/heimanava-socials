@@ -122,9 +122,20 @@
   margin-top: 6px;
 }
 
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .confirmation {
   font-size: 13.5px;
   color: var(--color-terracotta);
+  text-align: center;
+}
+
+.error {
+  font-size: 13.5px;
+  color: #e8a598;
   text-align: center;
 }
 

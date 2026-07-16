@@ -6,9 +6,17 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { key: "facebook", label: "Facebook", href: "https://facebook.com/heimanava.socials" },
+  {
+    key: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61572233947652",
+  },
   { key: "instagram", label: "Instagram", href: "https://instagram.com/heimanava_socials" },
-  { key: "linkedin", label: "LinkedIn", href: "https://linkedin.com" },
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/cassidy-chebret-heimanava-socials",
+  },
   { key: "tiktok", label: "TikTok", href: "https://tiktok.com/@heimanava.socials" },
   { key: "email", label: "Email", href: "mailto:heimanava.socials@gmail.com" },
 ] as const;
