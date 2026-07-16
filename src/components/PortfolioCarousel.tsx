@@ -13,7 +13,7 @@ const SWIPE_THRESHOLD = 40;
 type SlidePosition = "prev" | "active" | "next";
 
 export default function PortfolioCarousel() {
-  const sortedItems = [...PORTFOLIO_ITEMS].sort(
+  const sortedItems = PORTFOLIO_ITEMS.filter((item) => item.carousel !== false).sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   const count = sortedItems.length;

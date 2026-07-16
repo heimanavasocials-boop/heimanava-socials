@@ -97,19 +97,19 @@ export const OFFER_DETAILS: Record<string, OfferDetail> = {
     gallery: "photo",
     galleryItems: [
       {
-        titre: "Banque d'images - IAE Polynésie",
+        titre: "Shooting photo avec les étudiants de l'UPF - IAE Polynésie",
         href: "/portfolio/banque-images-iae-polynesie",
-        image: "/images/portfolio/iae-polynesie/iae-01.jpg",
+        image: "/images/portfolio-covers/iae.jpg",
       },
       {
-        titre: "Exposition 'Aikā",
+        titre: "Photos d'exposition 'Aikā - Bibliothèque Universitaire de l'UPF",
         href: "/portfolio/exposition-aika-bu",
-        image: "/images/portfolio/exposition-aika-bu/exposition-aika-bu-01.jpg",
+        image: "/images/portfolio-covers/aika.jpg",
       },
       {
-        titre: "Promotion Master CCA",
+        titre: "Shooting photo pour la promotion du Master CCA",
         href: "/portfolio/promotion-master-cca",
-        image: "/images/portfolio/promotion-master-cca/promotion-master-cca-01.jpg",
+        image: "/images/portfolio-covers/master-cca.jpg",
       },
     ],
   },
@@ -160,6 +160,8 @@ export type PortfolioItem = {
   date: string;
   href: string;
   image?: string;
+  /** false = hidden from the home carousel but still listed on /portfolio */
+  carousel?: boolean;
 };
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
@@ -169,6 +171,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     date: "2026-07-16",
     href: "/portfolio/tehau-pearl",
     image: "/images/portfolio/tehau-pearl-cover.jpg",
+    carousel: false,
   },
   {
     id: "home-portfolio-oravai",
@@ -176,27 +179,28 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     date: "2026-07-15",
     href: "/portfolio/oravai",
     image: "/images/portfolio/oravai-cover.jpg",
+    carousel: false,
   },
   {
     id: "home-portfolio-iae",
-    titre: "Banque d'images - IAE Polynésie",
+    titre: "Shooting photo avec les étudiants de l'UPF - IAE Polynésie",
     date: "2026-07-10",
     href: "/portfolio/banque-images-iae-polynesie",
-    image: "/images/portfolio/iae-polynesie/iae-01.jpg",
+    image: "/images/portfolio-covers/iae.jpg",
   },
   {
     id: "home-portfolio-aika",
-    titre: "Exposition 'Aikā",
+    titre: "Photos d'exposition 'Aikā - Bibliothèque Universitaire de l'UPF",
     date: "2026-07-08",
     href: "/portfolio/exposition-aika-bu",
-    image: "/images/portfolio/exposition-aika-bu/exposition-aika-bu-01.jpg",
+    image: "/images/portfolio-covers/aika.jpg",
   },
   {
     id: "home-portfolio-master-cca",
-    titre: "Promotion Master CCA",
+    titre: "Shooting photo pour la promotion du Master CCA",
     date: "2026-07-03",
     href: "/portfolio/promotion-master-cca",
-    image: "/images/portfolio/promotion-master-cca/promotion-master-cca-01.jpg",
+    image: "/images/portfolio-covers/master-cca.jpg",
   },
 ];
 
@@ -211,7 +215,7 @@ export type PortfolioGallery = {
 export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
   "banque-images-iae-polynesie": {
     slug: "banque-images-iae-polynesie",
-    titre: "Banque d'images - IAE Polynésie",
+    titre: "Shooting photo avec les étudiants de l'UPF - IAE Polynésie",
     images: Array.from(
       { length: 19 },
       (_, i) => `/images/portfolio/iae-polynesie/iae-${String(i + 1).padStart(2, "0")}.jpg`
@@ -219,7 +223,7 @@ export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
   },
   "exposition-aika-bu": {
     slug: "exposition-aika-bu",
-    titre: "Exposition 'Aikā",
+    titre: "Photos d'exposition 'Aikā - Bibliothèque Universitaire de l'UPF",
     description:
       "Exposition 'Aikā à la Bibliothèque universitaire de la Polynésie française, fruit d'une collaboration entre les étudiants en langues et civilisations polynésiennes de l'UPF et l'association Mata 'Avei'a.",
     images: Array.from(
@@ -230,7 +234,7 @@ export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
   },
   "promotion-master-cca": {
     slug: "promotion-master-cca",
-    titre: "Promotion Master CCA",
+    titre: "Shooting photo pour la promotion du Master CCA",
     description: "Shooting photo de la promotion Master CCA à l'UPF.",
     images: Array.from(
       { length: 2 },
@@ -257,6 +261,16 @@ export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
     ),
   },
 };
+
+export type TrustedLogo = {
+  id: string;
+  name: string;
+  image: string;
+};
+
+export const TRUSTED_LOGOS: TrustedLogo[] = [
+  { id: "iae-polynesie", name: "IAE Polynésie", image: "/images/trust/iae-logo.png" },
+];
 
 const MONTH_NAMES = [
   "janv.",
