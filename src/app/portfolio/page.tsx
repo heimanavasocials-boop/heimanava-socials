@@ -44,6 +44,7 @@ export default function PortfolioPage() {
                   alt={item.titre}
                   fill
                   sizes="(max-width: 560px) 90vw, (max-width: 900px) 45vw, 33vw"
+                  quality={85}
                   style={{ objectFit: "cover" }}
                 />
               ) : (

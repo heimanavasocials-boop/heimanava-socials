@@ -55,7 +55,7 @@
 .imgWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   border-radius: 18px;
   background: linear-gradient(155deg, var(--color-card) 0%, var(--color-bordeaux) 100%);
   display: flex;

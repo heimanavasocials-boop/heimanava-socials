@@ -7,7 +7,7 @@ import styles from "./PortfolioCarousel.module.css";
 import { PORTFOLIO_ITEMS, formatPortfolioDate } from "@/lib/site-data";
 import { ChevronLeftIcon, ChevronRightIcon, ImagePlaceholderIcon } from "./icons";
 
-const STEP = 278;
+const STEP = 358;
 const AUTOPLAY_INTERVAL = 3200;
 
 export default function PortfolioCarousel() {
@@ -66,7 +66,8 @@ export default function PortfolioCarousel() {
                     src={item.image}
                     alt={item.titre}
                     fill
-                    sizes="260px"
+                    sizes="340px"
+                    quality={85}
                     style={{ objectFit: "cover" }}
                   />
                 ) : (

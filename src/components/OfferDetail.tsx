@@ -55,7 +55,14 @@ export default function OfferDetail({ offerKey }: { offerKey: keyof typeof OFFER
                 <Link key={item.href} href={item.href} className={styles.galleryProjectCard}>
                   <div className={styles.galleryProjectThumb}>
                     {item.image ? (
-                      <Image src={item.image} alt={item.titre} fill sizes="200px" style={{ objectFit: "cover" }} />
+                      <Image
+                        src={item.image}
+                        alt={item.titre}
+                        fill
+                        sizes="260px"
+                        quality={85}
+                        style={{ objectFit: "cover" }}
+                      />
                     ) : (
                       <ImagePlaceholderIcon size={28} />
                     )}

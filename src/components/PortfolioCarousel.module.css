@@ -1,6 +1,6 @@
 .section {
   padding: clamp(64px, 9vw, 110px) clamp(24px, 5vw, 72px);
-  background: var(--color-bordeaux-dark);
+  background: var(--color-terracotta-light);
 }
 
 .heading {
@@ -15,7 +15,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-terracotta);
+  color: var(--color-bordeaux);
   margin-bottom: 14px;
 }
 
@@ -50,8 +50,8 @@
 
 .card {
   flex: none;
-  width: 260px;
-  aspect-ratio: 4 / 5;
+  width: 340px;
+  aspect-ratio: 3 / 2;
   position: relative;
   border-radius: 18px;
   overflow: hidden;
@@ -161,7 +161,7 @@
 .viewAll {
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--color-terracotta);
+  color: var(--color-bordeaux);
 }
 
 @media (max-width: 640px) {

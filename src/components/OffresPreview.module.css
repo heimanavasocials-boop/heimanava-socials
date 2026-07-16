@@ -1,6 +1,6 @@
 .section {
   padding: clamp(48px, 7vw, 90px) clamp(24px, 5vw, 72px) clamp(64px, 8vw, 96px);
-  background: var(--color-bordeaux-dark);
+  background: var(--color-bordeaux);
 }
 
 .heading {

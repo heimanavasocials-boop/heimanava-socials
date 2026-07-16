@@ -60,6 +60,7 @@ export default async function PortfolioGalleryPage({ params }: PageProps) {
                 alt={gallery.titre}
                 fill
                 sizes="(max-width: 560px) 90vw, (max-width: 900px) 45vw, 33vw"
+                quality={85}
               />
             </div>
           ))}
