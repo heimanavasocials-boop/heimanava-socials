@@ -25,6 +25,13 @@
   color: var(--color-cream);
 }
 
+.description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(241, 254, 198, 0.75);
+  margin: 18px 0 0;
+}
+
 .breadcrumbWrap {
   display: flex;
   justify-content: center;
@@ -47,6 +54,20 @@
 }
 
 .photo img {
+  object-fit: cover;
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 

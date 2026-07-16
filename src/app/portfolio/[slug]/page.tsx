@@ -33,6 +33,9 @@ export default async function PortfolioGalleryPage({ params }: PageProps) {
     notFound();
   }
 
+  const hasVideos = (gallery.videos?.length ?? 0) > 0;
+  const hasImages = gallery.images.length > 0;
+
   return (
     <div>
       <Nav active="portfolio" />
@@ -49,9 +52,18 @@ export default async function PortfolioGalleryPage({ params }: PageProps) {
         </div>
         <div className={styles.eyebrow}>Portfolio</div>
         <h1 className={styles.title}>{gallery.titre}</h1>
+        {gallery.description && <p className={styles.description}>{gallery.description}</p>}
       </div>
 
-      {gallery.images.length > 0 ? (
+      {hasVideos ? (
+        <div className={styles.grid}>
+          {gallery.videos!.map((src) => (
+            <div key={src} className={styles.video}>
+              <video src={src} controls playsInline muted loop preload="metadata" />
+            </div>
+          ))}
+        </div>
+      ) : hasImages ? (
         <div className={styles.grid}>
           {gallery.images.map((src) => (
             <div key={src} className={styles.photo}>
@@ -70,7 +82,7 @@ export default async function PortfolioGalleryPage({ params }: PageProps) {
           <div className={styles.galleryEmpty}>
             <ImagePlaceholderIcon size={32} />
             <p className={styles.galleryEmptyText}>
-              Les photos de ce projet arrivent bientôt dans cette galerie.
+              Les contenus de ce projet arrivent bientôt dans cette galerie.
             </p>
           </div>
         </div>

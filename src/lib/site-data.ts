@@ -101,6 +101,16 @@ export const OFFER_DETAILS: Record<string, OfferDetail> = {
         href: "/portfolio/banque-images-iae-polynesie",
         image: "/images/portfolio/iae-polynesie/iae-01.jpg",
       },
+      {
+        titre: "Exposition 'Aikā",
+        href: "/portfolio/exposition-aika-bu",
+        image: "/images/portfolio/exposition-aika-bu/exposition-aika-bu-01.jpg",
+      },
+      {
+        titre: "Promotion Master CCA",
+        href: "/portfolio/promotion-master-cca",
+        image: "/images/portfolio/promotion-master-cca/promotion-master-cca-01.jpg",
+      },
     ],
   },
   stories: {
@@ -116,6 +126,18 @@ export const OFFER_DETAILS: Record<string, OfferDetail> = {
     ],
     pricingNote: "Sur devis, selon le format et la durée du montage.",
     gallery: "video",
+    galleryItems: [
+      {
+        titre: "Tehau Pearl",
+        href: "/portfolio/tehau-pearl",
+        image: "/images/portfolio/tehau-pearl-cover.jpg",
+      },
+      {
+        titre: "Oravai",
+        href: "/portfolio/oravai",
+        image: "/images/portfolio/oravai-cover.jpg",
+      },
+    ],
   },
   studio: {
     key: "studio",
@@ -142,20 +164,48 @@ export type PortfolioItem = {
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
+    id: "home-portfolio-tehau-pearl",
+    titre: "Tehau Pearl",
+    date: "2026-07-16",
+    href: "/portfolio/tehau-pearl",
+    image: "/images/portfolio/tehau-pearl-cover.jpg",
+  },
+  {
+    id: "home-portfolio-oravai",
+    titre: "Oravai",
+    date: "2026-07-15",
+    href: "/portfolio/oravai",
+    image: "/images/portfolio/oravai-cover.jpg",
+  },
+  {
     id: "home-portfolio-iae",
     titre: "Banque d'images - IAE Polynésie",
     date: "2026-07-10",
     href: "/portfolio/banque-images-iae-polynesie",
     image: "/images/portfolio/iae-polynesie/iae-01.jpg",
   },
-  { id: "home-portfolio-1", titre: "Refonte présentation Canva", date: "2026-06-28", href: "/offres/studio" },
-  { id: "home-portfolio-2", titre: "Captation événementielle", date: "2026-06-10", href: "/offres/focus" },
+  {
+    id: "home-portfolio-aika",
+    titre: "Exposition 'Aikā",
+    date: "2026-07-08",
+    href: "/portfolio/exposition-aika-bu",
+    image: "/images/portfolio/exposition-aika-bu/exposition-aika-bu-01.jpg",
+  },
+  {
+    id: "home-portfolio-master-cca",
+    titre: "Promotion Master CCA",
+    date: "2026-07-03",
+    href: "/portfolio/promotion-master-cca",
+    image: "/images/portfolio/promotion-master-cca/promotion-master-cca-01.jpg",
+  },
 ];
 
 export type PortfolioGallery = {
   slug: string;
   titre: string;
+  description?: string;
   images: string[];
+  videos?: string[];
 };
 
 export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
@@ -163,8 +213,47 @@ export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
     slug: "banque-images-iae-polynesie",
     titre: "Banque d'images - IAE Polynésie",
     images: Array.from(
-      { length: 16 },
+      { length: 19 },
       (_, i) => `/images/portfolio/iae-polynesie/iae-${String(i + 1).padStart(2, "0")}.jpg`
+    ),
+  },
+  "exposition-aika-bu": {
+    slug: "exposition-aika-bu",
+    titre: "Exposition 'Aikā",
+    description:
+      "Exposition 'Aikā à la Bibliothèque universitaire de la Polynésie française, fruit d'une collaboration entre les étudiants en langues et civilisations polynésiennes de l'UPF et l'association Mata 'Avei'a.",
+    images: Array.from(
+      { length: 11 },
+      (_, i) =>
+        `/images/portfolio/exposition-aika-bu/exposition-aika-bu-${String(i + 1).padStart(2, "0")}.jpg`
+    ),
+  },
+  "promotion-master-cca": {
+    slug: "promotion-master-cca",
+    titre: "Promotion Master CCA",
+    description: "Shooting photo de la promotion Master CCA à l'UPF.",
+    images: Array.from(
+      { length: 2 },
+      (_, i) =>
+        `/images/portfolio/promotion-master-cca/promotion-master-cca-${String(i + 1).padStart(2, "0")}.jpg`
+    ),
+  },
+  "tehau-pearl": {
+    slug: "tehau-pearl",
+    titre: "Tehau Pearl",
+    images: [],
+    videos: Array.from(
+      { length: 11 },
+      (_, i) => `/video/tehau-pearl/tehau-pearl-${String(i + 1).padStart(2, "0")}.mp4`
+    ),
+  },
+  oravai: {
+    slug: "oravai",
+    titre: "Oravai",
+    images: [],
+    videos: Array.from(
+      { length: 6 },
+      (_, i) => `/video/oravai/oravai-${String(i + 1).padStart(2, "0")}.mp4`
     ),
   },
 };
