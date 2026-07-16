@@ -27,9 +27,9 @@
 
 .wrap.solid {
   padding: 18px clamp(20px, 5vw, 72px);
-  background: rgba(72, 20, 15, 0.94);
+  background: rgba(61, 8, 20, 0.94);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(243, 229, 200, 0.12);
+  border-bottom: 1px solid rgba(241, 254, 198, 0.12);
 }
 
 .logo {

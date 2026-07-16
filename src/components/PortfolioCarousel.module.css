@@ -1,6 +1,6 @@
 .section {
   padding: clamp(64px, 9vw, 110px) clamp(24px, 5vw, 72px);
-  background: var(--color-terracotta-light);
+  background: #000000;
 }
 
 .heading {
@@ -15,7 +15,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-bordeaux);
+  color: var(--color-terracotta);
   margin-bottom: 14px;
 }
 
@@ -29,84 +29,106 @@
   color: var(--color-cream);
 }
 
-.carouselOuter {
+.stage {
   position: relative;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.carousel {
+.track {
   display: flex;
-  gap: 18px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.card {
+.slide {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
   flex: none;
-  width: 340px;
-  aspect-ratio: 3 / 2;
   position: relative;
-  border-radius: 18px;
+  aspect-ratio: 3 / 2;
+  border-radius: 16px;
   overflow: hidden;
+  cursor: pointer;
   display: block;
+  transition:
+    width 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease,
+    opacity 0.45s ease;
 }
 
-.imgWrap {
+.active {
+  width: 60%;
+  filter: brightness(1);
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+  cursor: default;
+}
+
+.prev,
+.next {
+  width: 20%;
+  filter: brightness(0.4);
+  opacity: 0.85;
+  transform: scale(0.9);
+  z-index: 1;
+}
+
+.prev:hover,
+.next:hover {
+  filter: brightness(0.6);
+}
+
+.slideImg {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s ease;
   background: linear-gradient(155deg, var(--color-card) 0%, var(--color-bordeaux) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(243, 229, 200, 0.35);
+  color: rgba(241, 254, 198, 0.35);
 }
 
-.card:hover .imgWrap {
-  transform: scale(1.08);
-}
-
-.overlay {
+.slideTitle {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 18px;
-  background: linear-gradient(180deg, transparent 45%, rgba(72, 20, 15, 0.92) 100%);
+  padding: 20px;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.85) 100%);
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(10px);
   transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+    opacity 0.3s ease,
+    transform 0.3s ease;
   pointer-events: none;
+  text-align: left;
 }
 
-.card:hover .overlay {
+.active:hover .slideTitle {
   opacity: 1;
   transform: translateY(0);
 }
 
-.overlayTitle {
+.slideTitleText {
   font-family: var(--font-fraunces);
   font-style: italic;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--color-cream);
   margin-bottom: 4px;
 }
 
-.overlayDate {
-  font-size: 12px;
-  color: rgba(243, 229, 200, 0.7);
+.slideDate {
+  font-size: 12.5px;
+  color: rgba(241, 254, 198, 0.7);
 }
 
 .arrow {
@@ -115,13 +137,14 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(72, 20, 15, 0.85);
-  border: 1px solid rgba(243, 229, 200, 0.25);
+  background: rgba(61, 8, 20, 0.85);
+  border: 1px solid rgba(241, 254, 198, 0.25);
   color: var(--color-cream);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 3;
   transition:
     background 0.18s ease,
     opacity 0.18s ease;
@@ -132,11 +155,11 @@
 }
 
 .arrowPrev {
-  left: -18px;
+  left: 4px;
 }
 
 .arrowNext {
-  right: -18px;
+  right: 4px;
 }
 
 .actions {
@@ -150,7 +173,7 @@
 
 .testimonyCta {
   display: inline-block;
-  border: 1px solid rgba(243, 229, 200, 0.35);
+  border: 1px solid rgba(241, 254, 198, 0.35);
   color: var(--color-cream);
   padding: 13px 26px;
   border-radius: 100px;
@@ -161,11 +184,35 @@
 .viewAll {
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--color-bordeaux);
+  color: var(--color-terracotta);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px) {
+  .active {
+    width: 75%;
+  }
+  .prev,
+  .next {
+    width: 12.5%;
+  }
+  .arrowPrev {
+    left: -4px;
+  }
+  .arrowNext {
+    right: -4px;
+  }
+}
+
+@media (max-width: 560px) {
+  .active {
+    width: 90%;
+  }
+  .prev,
+  .next {
+    width: 5%;
+  }
   .arrow {
-    display: none;
+    width: 34px;
+    height: 34px;
   }
 }

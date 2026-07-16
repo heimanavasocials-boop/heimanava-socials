@@ -57,21 +57,21 @@
 }
 
 .galleryEmpty {
-  border: 1px dashed rgba(243, 229, 200, 0.25);
+  border: 1px dashed rgba(241, 254, 198, 0.25);
   border-radius: 18px;
   padding: clamp(48px, 7vw, 72px) 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  color: rgba(243, 229, 200, 0.5);
+  color: rgba(241, 254, 198, 0.5);
   text-align: center;
 }
 
 .galleryEmptyText {
   font-size: 14.5px;
   line-height: 1.65;
-  color: rgba(243, 229, 200, 0.62);
+  color: rgba(241, 254, 198, 0.62);
   margin: 0;
   max-width: 380px;
 }

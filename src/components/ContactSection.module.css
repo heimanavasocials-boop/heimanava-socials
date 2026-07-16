@@ -33,7 +33,7 @@
 .intro {
   font-size: 15.5px;
   line-height: 1.7;
-  color: rgba(243, 229, 200, 0.75);
+  color: rgba(241, 254, 198, 0.75);
   margin: 0 0 36px;
   max-width: 440px;
 }
@@ -57,7 +57,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(243, 229, 200, 0.08);
+  background: rgba(241, 254, 198, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +66,7 @@
 
 .location {
   font-size: 13.5px;
-  color: rgba(243, 229, 200, 0.55);
+  color: rgba(241, 254, 198, 0.55);
 }
 
 .form {
@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border: 1px solid rgba(243, 229, 200, 0.08);
+  border: 1px solid rgba(241, 254, 198, 0.08);
 }
 
 .field {
@@ -89,7 +89,7 @@
   font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.4px;
-  color: rgba(243, 229, 200, 0.7);
+  color: rgba(241, 254, 198, 0.7);
   text-transform: uppercase;
 }
 
@@ -97,7 +97,7 @@
 .textarea,
 .select {
   background: var(--color-bordeaux);
-  border: 1px solid rgba(243, 229, 200, 0.15);
+  border: 1px solid rgba(241, 254, 198, 0.15);
   border-radius: 10px;
   padding: 13px 14px;
   color: var(--color-cream);

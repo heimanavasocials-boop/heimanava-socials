@@ -16,7 +16,7 @@
 }
 
 .link {
-  color: rgba(243, 229, 200, 0.65);
+  color: rgba(241, 254, 198, 0.65);
 }
 
 .link:hover {
@@ -28,5 +28,5 @@
 }
 
 .separator {
-  color: rgba(243, 229, 200, 0.35);
+  color: rgba(241, 254, 198, 0.35);
 }

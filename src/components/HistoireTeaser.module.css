@@ -50,7 +50,7 @@
 .paragraph {
   font-size: 16px;
   line-height: 1.75;
-  color: rgba(72, 20, 15, 0.78);
+  color: rgba(61, 8, 20, 0.78);
   margin: 0 0 16px;
 }
 
@@ -60,7 +60,7 @@
 
 .cta {
   display: inline-block;
-  border: 1px solid rgba(72, 20, 15, 0.3);
+  border: 1px solid rgba(61, 8, 20, 0.3);
   color: var(--color-bordeaux);
   padding: 13px 26px;
   border-radius: 100px;

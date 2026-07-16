@@ -1,11 +1,12 @@
 :root {
-  --color-bordeaux: #48140f;
-  --color-bordeaux-dark: #3e100c;
-  --color-card: #5a231c;
-  --color-card-hover: #66271e;
-  --color-cream: #f3e5c8;
-  --color-terracotta: #a0564b;
-  --color-terracotta-light: #c97a5a;
+  --color-bordeaux: #3d0814;
+  --color-bordeaux-dark: #3d0814;
+  --color-card: #591b24;
+  --color-card-hover: #6b222e;
+  --color-cream: #f1fec6;
+  --color-terracotta: #ce4760;
+  --color-lavender: #d8d4f2;
+  --color-blue: #065a82;
   --font-fraunces: "Fraunces", serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-bugaki: "Bugaki", cursive;
@@ -41,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: #e6b98f;
+  color: #e88ca0;
 }
 
 ::selection {
@@ -51,7 +52,7 @@ a:hover {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(243, 229, 200, 0.45);
+  color: rgba(241, 254, 198, 0.45);
 }
 
 input:focus,

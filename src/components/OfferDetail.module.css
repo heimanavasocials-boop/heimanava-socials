@@ -27,7 +27,7 @@
 .intro {
   font-size: 16.5px;
   line-height: 1.7;
-  color: rgba(243, 229, 200, 0.82);
+  color: rgba(241, 254, 198, 0.82);
   margin: 0;
   max-width: 620px;
 }
@@ -54,7 +54,7 @@
 .bullet {
   font-size: 15px;
   line-height: 1.6;
-  color: rgba(243, 229, 200, 0.85);
+  color: rgba(241, 254, 198, 0.85);
   padding-left: 26px;
   position: relative;
 }
@@ -72,7 +72,7 @@
 
 .pricingBox {
   background: var(--color-card);
-  border: 1px solid rgba(243, 229, 200, 0.08);
+  border: 1px solid rgba(241, 254, 198, 0.08);
   border-radius: 18px;
   padding: 28px 24px;
   display: flex;
@@ -91,7 +91,7 @@
 .pricingNote {
   font-size: 13.5px;
   line-height: 1.6;
-  color: rgba(243, 229, 200, 0.72);
+  color: rgba(241, 254, 198, 0.72);
   margin: 0;
 }
 
@@ -122,21 +122,21 @@
 }
 
 .galleryEmpty {
-  border: 1px dashed rgba(243, 229, 200, 0.25);
+  border: 1px dashed rgba(241, 254, 198, 0.25);
   border-radius: 18px;
   padding: clamp(40px, 6vw, 64px) 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  color: rgba(243, 229, 200, 0.5);
+  color: rgba(241, 254, 198, 0.5);
   text-align: center;
 }
 
 .galleryEmptyText {
   font-size: 14px;
   line-height: 1.6;
-  color: rgba(243, 229, 200, 0.62);
+  color: rgba(241, 254, 198, 0.62);
   margin: 0;
   max-width: 380px;
 }
@@ -151,7 +151,7 @@
   display: block;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(243, 229, 200, 0.08);
+  border: 1px solid rgba(241, 254, 198, 0.08);
   transition: transform 0.18s ease;
 }
 
@@ -166,7 +166,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(243, 229, 200, 0.35);
+  color: rgba(241, 254, 198, 0.35);
 }
 
 .galleryProjectTitle {
