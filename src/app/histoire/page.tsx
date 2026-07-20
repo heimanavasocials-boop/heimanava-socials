@@ -14,18 +14,28 @@ export const metadata: Metadata = {
 const BLOCKS = [
   {
     number: "01",
-    title: "Mon état d'esprit",
-    text: "Je suis présente à chaque étape. Pas de prestation livrée à distance sans suivi : je pense chaque solution pour la réalité concrète de votre PME, pas pour un client type qui n'existe pas.",
+    title: "Ce qui a tout déclenché",
+    text: "Tout n'a pas commencé avec Heimanava Socials directement. Ça a commencé par un projet laissé en suspens, quelques temps plus tôt. Pas le genre d'échec qu'on cache. Le genre qui t'oblige à regarder en face ce que tu veux vraiment faire. La passion pour la communication digitale, je l'avais depuis longtemps. Mais entre « j'aime ça » et « j'en fais mon métier », il y a un pas. Ce projet raté m'a forcée à le franchir, à sortir de ma zone de confort. Avec une envie profonde : construire quelque chose pour moi.",
   },
   {
     number: "02",
-    title: "Mon parcours",
-    text: "J'ai commencé étudiante, sans portfolio ni historique client. J'ai construit ma légitimité sur le terrain, mission après mission, en faisant mes preuves plutôt qu'en les affichant.",
+    title: "Se sentir légitime",
+    text: "Le plus dur au début ? Me sentir légitime. Étudiante, un portfolio qui commençait tout juste à prendre forme, peu d'historique client. Pourquoi une entreprise me ferait confiance plutôt qu'à quelqu'un de plus expérimenté ? Cette question, je me la suis souvent posée. En même temps : les cours, les deadlines, la compta, le commercial, la production. Seule. Personne ne t'apprend ça à l'école. Mais c'est là que tu apprends vraiment.",
   },
   {
     number: "03",
-    title: "Ma manière de travailler",
-    text: "Je suis une partenaire au quotidien, pas une prestataire de passage. Je reste disponible une fois le projet lancé, pas seulement le temps de la vente.",
+    title: "Ce que je n'avais pas anticipé",
+    text: "En quelques mois, j'ai progressé plus qu'en une année de cours. Des opportunités se sont présentées que je n'aurais jamais vues sans avoir sauté le pas. Et cette fierté de voir quelque chose exister parce que tu l'as voulu.",
+  },
+  {
+    number: "04",
+    title: "Continuer à apprendre, en parallèle",
+    text: "Aujourd'hui, je poursuis un Master Management Commerce International à l'IAE Polynésie française, tout en portant Heimanava Socials au quotidien. C'est le statut national étudiant-entrepreneur (SNEE), avec Pépite Polynésie derrière moi, qui rend ça possible : continuer à étudier sans mettre l'entreprise en pause.",
+  },
+  {
+    number: "05",
+    title: "Heimanava Socials, aujourd'hui",
+    text: "C'est une entreprise basée à Tahiti, qui accompagne les PME locales en communication digitale : community management, vidéo social media, présentations Canva, photo événementielle. Pour les entreprises qui veulent être vues. Vraiment.",
   },
 ];
 
@@ -57,20 +67,27 @@ export default function HistoirePage() {
           />
         </div>
         <div>
-          <h2 className={styles.signature}>Je ne suis pas arrivée. J&apos;avance.</h2>
+          <h2 className={styles.signature}>
+            J&apos;ai arrêté d&apos;attendre. J&apos;ai créé Heimanava Socials.
+          </h2>
           <p className={styles.paragraph}>
-            J&apos;ai lancé mon entreprise pendant mes études. Pas par hasard. Par nécessité.
+            J&apos;ai lancé mon entreprise pendant mes études en licence économie-gestion à
+            l&apos;UPF. Pas par hasard. Par nécessité.
           </p>
           <p className={styles.paragraph}>
-            Diplômée d&apos;une Licence Économie-Gestion à l&apos;UPF, aujourd&apos;hui en 1ère
-            année de Master Management Commerce International à l&apos;IAE Polynésie, et engagée
-            avec le SNEE et Pépite Polynésie, j&apos;ai vu autour de moi des commerçants et des
-            entrepreneurs excellents dans leur métier, mais invisibles en ligne. Personne ne
-            s&apos;occupait vraiment d&apos;eux.
+            On m&apos;a dit qu&apos;il fallait un CV solide et un carnet d&apos;adresses pour se
+            lancer. Moi, j&apos;avais l&apos;inverse.
           </p>
           <p className={styles.paragraph}>
-            Alors j&apos;ai décidé de m&apos;en occuper. Pas avec un discours corporate, mais avec
-            une communication humaine, locale et accessible.
+            Ce que j&apos;avais, c&apos;est du terrain : depuis 2021, je fais du community
+            management, d&apos;abord pour une paroisse, par passion, sans savoir que ça
+            deviendrait mon métier un jour.
+          </p>
+          <p className={styles.paragraph}>
+            Mon portfolio n&apos;est pas encore aussi rempli que celui des grandes agences. Mais
+            mon envie, elle, n&apos;a jamais été aussi claire : construire quelque chose à moi,
+            et aider les PME du fenua à enfin exister sur les réseaux, elles qui sont excellentes
+            dans leur métier mais invisibles en ligne.
           </p>
         </div>
       </div>
