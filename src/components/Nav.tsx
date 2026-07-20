@@ -49,7 +49,7 @@ export default function Nav({ active, transparentAtTop = false }: NavProps) {
       }`}
     >
       <Link href="/" className={styles.logo}>
-        Heimanava
+        Heimanava Socials
       </Link>
       <div className={styles.links}>
         {NAV_LINKS.map((link) => (

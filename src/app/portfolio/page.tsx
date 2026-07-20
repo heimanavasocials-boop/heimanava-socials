@@ -52,7 +52,9 @@ export default function PortfolioPage() {
               )}
               <div className={styles.overlay}>
                 <div className={styles.overlayTitle}>{item.titre}</div>
-                <div className={styles.overlayDate}>{formatPortfolioDate(item.date)}</div>
+                <div className={styles.overlayDate}>
+                  {item.dateLabel ?? formatPortfolioDate(item.date)}
+                </div>
               </div>
             </div>
           </Link>

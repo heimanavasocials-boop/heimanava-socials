@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
   padding: 26px clamp(20px, 5vw, 72px);
   background: transparent;
   border-bottom: 1px solid transparent;
@@ -35,17 +36,18 @@
 .logo {
   flex: none;
   font-family: var(--font-bugaki);
-  font-size: 24px;
+  font-size: 21px;
   color: var(--color-cream);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 .links {
   display: flex;
-  gap: 32px;
-  font-size: 12.5px;
+  gap: 22px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   flex-wrap: nowrap;
   white-space: nowrap;
@@ -64,7 +66,7 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   flex: none;
 }
 
@@ -89,14 +91,15 @@
 .cta {
   background: var(--color-terracotta);
   color: var(--color-cream);
-  padding: 9px 20px;
+  padding: 9px 18px;
   border-radius: 100px;
   font-weight: 600;
   font-size: 12.5px;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1180px) {
   .wrap {
     flex-wrap: wrap;
     row-gap: 14px;

@@ -123,7 +123,9 @@ export default function PortfolioCarousel() {
                   <div className={styles.slideImg}>{image}</div>
                   <div className={styles.slideTitle}>
                     <div className={styles.slideTitleText}>{item.titre}</div>
-                    <div className={styles.slideDate}>{formatPortfolioDate(item.date)}</div>
+                    <div className={styles.slideDate}>
+                      {item.dateLabel ?? formatPortfolioDate(item.date)}
+                    </div>
                   </div>
                 </Link>
               );

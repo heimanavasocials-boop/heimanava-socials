@@ -59,7 +59,7 @@ export default async function PortfolioGalleryPage({ params }: PageProps) {
         <div className={styles.grid}>
           {gallery.videos!.map((src) => (
             <div key={src} className={styles.video}>
-              <video src={src} controls playsInline muted loop preload="metadata" />
+              <video src={src} controls autoPlay playsInline muted loop preload="auto" />
             </div>
           ))}
         </div>

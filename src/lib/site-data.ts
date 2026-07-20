@@ -158,6 +158,8 @@ export type PortfolioItem = {
   id: string;
   titre: string;
   date: string;
+  /** Overrides the auto-formatted "mois année" display, e.g. for a date range */
+  dateLabel?: string;
   href: string;
   image?: string;
   /** false = hidden from the home carousel but still listed on /portfolio */
@@ -166,41 +168,43 @@ export type PortfolioItem = {
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: "home-portfolio-tehau-pearl",
-    titre: "Tehau Pearl",
-    date: "2026-07-16",
-    href: "/portfolio/tehau-pearl",
-    image: "/images/portfolio/tehau-pearl-cover.jpg",
-    carousel: false,
-  },
-  {
-    id: "home-portfolio-oravai",
-    titre: "Oravai",
-    date: "2026-07-15",
-    href: "/portfolio/oravai",
-    image: "/images/portfolio/oravai-cover.jpg",
-    carousel: false,
-  },
-  {
     id: "home-portfolio-iae",
     titre: "Shooting photo avec les étudiants de l'UPF - IAE Polynésie",
-    date: "2026-07-10",
+    date: "2026-06-20",
     href: "/portfolio/banque-images-iae-polynesie",
     image: "/images/portfolio-covers/iae.jpg",
   },
   {
     id: "home-portfolio-aika",
     titre: "Photos d'exposition 'Aikā - Bibliothèque Universitaire de l'UPF",
-    date: "2026-07-08",
+    date: "2026-06-15",
     href: "/portfolio/exposition-aika-bu",
     image: "/images/portfolio-covers/aika.jpg",
   },
   {
     id: "home-portfolio-master-cca",
     titre: "Shooting photo pour la promotion du Master CCA",
-    date: "2026-07-03",
+    date: "2026-06-10",
     href: "/portfolio/promotion-master-cca",
     image: "/images/portfolio-covers/master-cca.jpg",
+  },
+  {
+    id: "home-portfolio-oravai",
+    titre: "Oravai",
+    date: "2024-09-01",
+    dateLabel: "Septembre - Décembre 2024",
+    href: "/portfolio/oravai",
+    image: "/images/portfolio/oravai-cover.jpg",
+    carousel: false,
+  },
+  {
+    id: "home-portfolio-tehau-pearl",
+    titre: "Tehau Pearl",
+    date: "2024-08-01",
+    dateLabel: "Août - Décembre 2024",
+    href: "/portfolio/tehau-pearl",
+    image: "/images/portfolio/tehau-pearl-cover.jpg",
+    carousel: false,
   },
 ];
 

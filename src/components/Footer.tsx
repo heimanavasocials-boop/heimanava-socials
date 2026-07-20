@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.grid}>
         <div>
-          <div className={styles.logo}>Heimanava</div>
+          <div className={styles.logo}>Heimanava Socials</div>
           <div className={styles.heading}>Services</div>
           <div className={styles.list}>
             {OFFERS.map((offer) => (
