@@ -6,11 +6,15 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CtaBanner from "@/components/CtaBanner";
 import { OFFERS, OFFER_DETAILS } from "@/lib/site-data";
 import { CameraIcon, PlayIcon, ChatIcon, DeckIcon } from "@/components/icons";
+import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Mes offres | Heimanava Socials",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Mes offres — Community management, photo, vidéo, Canva | Heimanava Socials",
+  description:
+    "Community management, photo événementielle, vidéo social media, présentations Canva : mes 4 offres sur devis pour faire exister votre PME polynésienne en ligne.",
+  path: "/offres",
+});
 
 const OFFER_ICONS = {
   chat: ChatIcon,

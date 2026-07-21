@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Breadcrumb from "./Breadcrumb";
 import CtaBanner from "./CtaBanner";
+import GalleryHoverCard from "./GalleryHoverCard";
 import { OFFER_DETAILS } from "@/lib/site-data";
 import { ImagePlaceholderIcon } from "./icons";
 import styles from "./OfferDetail.module.css";
@@ -50,25 +50,15 @@ export default function OfferDetail({ offerKey }: { offerKey: keyof typeof OFFER
             {offer.gallery === "photo" ? "Galerie photo" : "Galerie vidéo"}
           </div>
           {offer.galleryItems && offer.galleryItems.length > 0 ? (
-            <div className={styles.galleryProjects}>
+            <div className={styles.hoverGrid}>
               {offer.galleryItems.map((item) => (
-                <Link key={item.href} href={item.href} className={styles.galleryProjectCard}>
-                  <div className={styles.galleryProjectThumb}>
-                    {item.image ? (
-                      <Image
-                        src={item.image}
-                        alt={item.titre}
-                        fill
-                        sizes="260px"
-                        quality={85}
-                        style={{ objectFit: "cover" }}
-                      />
-                    ) : (
-                      <ImagePlaceholderIcon size={28} />
-                    )}
-                  </div>
-                  <div className={styles.galleryProjectTitle}>{item.titre}</div>
-                </Link>
+                <GalleryHoverCard
+                  key={item.href}
+                  href={item.href}
+                  titre={item.titre}
+                  image={item.image}
+                  isVideo={offer.gallery === "video"}
+                />
               ))}
             </div>
           ) : (

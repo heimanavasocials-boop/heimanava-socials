@@ -211,6 +211,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 export type PortfolioGallery = {
   slug: string;
   titre: string;
+  /** Short tag shown under the title on the project cover (e.g. the institution/client name) */
+  sousTitre?: string;
   description?: string;
   images: string[];
   videos?: string[];
@@ -220,6 +222,7 @@ export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
   "banque-images-iae-polynesie": {
     slug: "banque-images-iae-polynesie",
     titre: "Shooting photo avec les étudiants de l'UPF - IAE Polynésie",
+    sousTitre: "IAE Polynésie française",
     images: Array.from(
       { length: 19 },
       (_, i) => `/images/portfolio/iae-polynesie/iae-${String(i + 1).padStart(2, "0")}.jpg`
@@ -228,6 +231,7 @@ export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
   "exposition-aika-bu": {
     slug: "exposition-aika-bu",
     titre: "Photos d'exposition 'Aikā - Bibliothèque Universitaire de l'UPF",
+    sousTitre: "Bibliothèque Universitaire de l'UPF",
     description:
       "Exposition 'Aikā à la Bibliothèque universitaire de la Polynésie française, fruit d'une collaboration entre les étudiants en langues et civilisations polynésiennes de l'UPF et l'association Mata 'Avei'a.",
     images: Array.from(
@@ -239,6 +243,7 @@ export const PORTFOLIO_GALLERIES: Record<string, PortfolioGallery> = {
   "promotion-master-cca": {
     slug: "promotion-master-cca",
     titre: "Shooting photo pour la promotion du Master CCA",
+    sousTitre: "Master CCA — UPF",
     description: "Shooting photo de la promotion Master CCA à l'UPF.",
     images: Array.from(
       { length: 2 },

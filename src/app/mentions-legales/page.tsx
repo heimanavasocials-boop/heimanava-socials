@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Mentions légales | Heimanava Socials",
-};
+  description:
+    "Mentions légales de Heimanava Socials, agence de communication digitale basée à Tahiti, Polynésie française.",
+  path: "/mentions-legales",
+});
 
 export default function MentionsLegalesPage() {
   return (

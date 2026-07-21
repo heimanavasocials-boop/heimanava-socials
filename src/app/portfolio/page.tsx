@@ -1,21 +1,34 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import CtaBanner from "@/components/CtaBanner";
-import { PORTFOLIO_ITEMS, formatPortfolioDate } from "@/lib/site-data";
-import { ImagePlaceholderIcon } from "@/components/icons";
+import GalleryHoverCard from "@/components/GalleryHoverCard";
+import { PORTFOLIO_ITEMS, PORTFOLIO_GALLERIES } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Mon portfolio | Heimanava Socials",
-};
+function slugFromHref(href: string) {
+  return href.replace("/portfolio/", "");
+}
+
+export const metadata: Metadata = buildMetadata({
+  title: "Mon portfolio — Créations pour les PME de Polynésie française | Heimanava Socials",
+  description:
+    "Mes créations pour les PME et institutions de Polynésie française : community management, photo événementielle, vidéo. Pas de client nommé, juste le travail.",
+  path: "/portfolio",
+});
 
 export default function PortfolioPage() {
   const sortedItems = [...PORTFOLIO_ITEMS].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const photoItems = sortedItems.filter(
+    (item) => (PORTFOLIO_GALLERIES[slugFromHref(item.href)]?.images.length ?? 0) > 0
+  );
+  const videoItems = sortedItems.filter(
+    (item) => (PORTFOLIO_GALLERIES[slugFromHref(item.href)]?.videos?.length ?? 0) > 0
   );
 
   return (
@@ -34,32 +47,33 @@ export default function PortfolioPage() {
         </p>
       </div>
 
-      <div className={styles.grid}>
-        {sortedItems.map((item) => (
-          <Link key={item.id} href={item.href} className={styles.card}>
-            <div className={styles.imgWrap}>
-              {item.image ? (
-                <Image
-                  src={item.image}
-                  alt={item.titre}
-                  fill
-                  sizes="(max-width: 560px) 90vw, (max-width: 900px) 45vw, 33vw"
-                  quality={85}
-                  style={{ objectFit: "cover" }}
-                />
-              ) : (
-                <ImagePlaceholderIcon size={32} />
-              )}
-              <div className={styles.overlay}>
-                <div className={styles.overlayTitle}>{item.titre}</div>
-                <div className={styles.overlayDate}>
-                  {item.dateLabel ?? formatPortfolioDate(item.date)}
-                </div>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {photoItems.length > 0 && (
+        <section className={styles.gallerySection}>
+          <h2 className={styles.sectionTitle}>Galerie photo</h2>
+          <div className={styles.hoverGrid}>
+            {photoItems.map((item) => (
+              <GalleryHoverCard key={item.id} href={item.href} titre={item.titre} image={item.image} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {videoItems.length > 0 && (
+        <section className={styles.gallerySection}>
+          <h2 className={styles.sectionTitle}>Productions vidéo</h2>
+          <div className={styles.hoverGrid}>
+            {videoItems.map((item) => (
+              <GalleryHoverCard
+                key={item.id}
+                href={item.href}
+                titre={item.titre}
+                image={item.image}
+                isVideo
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       <p className={styles.emptyNote}>
         Mon portfolio s&apos;enrichit au fil des projets. De nouvelles créations arrivent

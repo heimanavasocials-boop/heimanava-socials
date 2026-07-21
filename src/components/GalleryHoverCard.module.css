@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image {
+  object-fit: cover;
+  transition:
+    filter 0.35s ease,
+    transform 0.35s ease;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, var(--color-card) 0%, var(--color-bordeaux) 100%);
+}
+
+.playBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(61, 8, 20, 0.65);
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.title {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  color: var(--color-cream);
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (hover: hover) {
+  .card:hover .image {
+    filter: brightness(0.4);
+    transform: scale(1.03);
+  }
+
+  .card:hover .overlay {
+    opacity: 1;
+  }
+}
+
+.card.isActive .image {
+  filter: brightness(0.4);
+}
+
+.card.isActive .overlay {
+  opacity: 1;
+}

@@ -37,76 +37,41 @@
   justify-content: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.gallerySection {
   max-width: 1100px;
   margin: clamp(48px, 7vw, 72px) auto 0;
   padding: 0 clamp(24px, 5vw, 72px);
 }
 
-.card {
-  display: block;
-  border-radius: 18px;
-  overflow: hidden;
+.gallerySection + .gallerySection {
+  margin-top: clamp(56px, 8vw, 90px);
 }
 
-.imgWrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  border-radius: 18px;
-  background: linear-gradient(155deg, var(--color-card) 0%, var(--color-bordeaux) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(241, 254, 198, 0.35);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 0 0 var(--color-lavender);
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.25s ease;
-}
-
-.card:hover .imgWrap {
-  transform: scale(1.03);
-  box-shadow: 0 0 0 2px var(--color-lavender);
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px;
-  background: linear-gradient(180deg, transparent 45%, rgba(61, 8, 20, 0.92) 100%);
-  opacity: 0;
-  transform: translateY(8px);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
-
-.card:hover .overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.overlayTitle {
+.sectionTitle {
   font-family: var(--font-fraunces);
   font-style: italic;
-  font-weight: 600;
-  font-size: 17px;
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 30px);
   color: var(--color-cream);
-  margin-bottom: 4px;
+  margin: 0 0 24px;
 }
 
-.overlayDate {
-  font-size: 12.5px;
-  color: rgba(241, 254, 198, 0.7);
+.hoverGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .hoverGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .hoverGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .emptyNote {
@@ -121,16 +86,4 @@
 
 .ctaSpacer {
   margin-top: clamp(56px, 8vw, 90px);
-}
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
 }

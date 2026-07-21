@@ -5,11 +5,15 @@ import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import CtaBanner from "@/components/CtaBanner";
 import cassiePortrait from "../../../public/images/cassie-portrait.webp";
+import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Mon histoire | Heimanava Socials",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Mon histoire — Cassidy, fondatrice de Heimanava Socials | Tahiti",
+  description:
+    "Étudiante entrepreneure à Tahiti, j'ai lancé Heimanava Socials par nécessité, pas par hasard. Voici mon parcours et pourquoi j'accompagne les PME polynésiennes.",
+  path: "/histoire",
+});
 
 const BLOCKS = [
   {
